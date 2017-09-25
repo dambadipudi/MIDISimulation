@@ -46,7 +46,6 @@
 			if(keyName.indexOf("b") != -1) {
 				//Create a white extra column and the black column for a black key
 				var b_extra = document.createElement("td");
-				b_extra.style.border = "1px solid grey";
 				// Db and Gb have a different column width for white space
 				//console.log(keyName);
 				if(keyName.indexOf("Db") != -1 || keyName.indexOf("Gb") != -1) {
@@ -59,6 +58,7 @@
 				}
 				black_keys.appendChild(b_extra);
 				var d = document.createElement("td");
+				d.style.border = "1px solid black";
 				d.style.background = "black";
 				d.style.width = "4px";
 				black_keys.appendChild(d);
