@@ -130,7 +130,7 @@
 			onsuccess: function() {
 				/// this sets up the MIDI.Player and gets things going...
 				player = MIDI.Player;
-				player.timeWarp = 1; // speed the song is played back
+				player.timeWarp = 2; // speed the song is played back
 				player.loadFile("mamathala_talli.mid", player.start);
 				/// control the piano keys colors
 				var colorMap = MIDI.Synesthesia.map();
@@ -162,7 +162,7 @@
 	};
 	
 </script>
-	<div id="title" style="align: center; margin:auto; width: 100%; padding:50px;">
+	<div id="title" style="margin:auto; width: 30%; padding:50px;">
 		<table id="white_table_title" style="border-collapse: collapse; border: 1px solid grey; width:220px; height: 80px; table-layout: fixed;">
 			 <tr id="tr_piano_white_title">
 			 </tr>
