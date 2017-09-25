@@ -41,6 +41,9 @@
 		var colorElements = [];
 		for (var n = 0; n < 88; n++) {
 			var d = document.createElement("td");
+			d.style.fontSize = "xx-small";
+			d.style.border = "1px solid grey";
+			d.style.width = "10px";
 			d.innerHTML = MIDI.noteToKey[n + 21];
 			colorElements.push(d);
 			colors.appendChild(d);
@@ -83,7 +86,7 @@
 	
 </script>
 	<div style="text-align: center; position: absolute; top: 50px; left: 50px;" id="colors">
-		<table id="Piano table" style="border-collapse: collapse; border: 1px solid grey; width:88px; height: 50px;">
+		<table id="Piano table" style="border-collapse: collapse; border: 1px solid grey; width:880px; height: 50px;">
 			  <tr id="tr_piano">
 			   	
 			   </tr>
