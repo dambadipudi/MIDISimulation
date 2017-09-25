@@ -65,6 +65,7 @@
 		//Now add the white keys in the piano
 		for(var j = 0; j < white_title.length; j++) {
 			var white_key = document.createElement("td");
+			white_key.style.border = "1px solid black;";
 			white_key.style.width = "10px";
 			white_key.style.background = "white";
 			white_key.style.fontSize="xx-small";
@@ -168,7 +169,7 @@
 			  </tr>	 
 		</table>
 	</div>
-	<div style="text-align: center; margin:auto; width: 100%; top: 150px;">
+	<div style="text-align: center; margin:auto; width: 100%; padding: 50px;">
 		<table id="white_table" style="border-collapse: collapse; border: 1px solid grey; width:1040px; height: 80px; table-layout: fixed;">
 			 <tr id="tr_piano_white"></tr>
 		</table>
