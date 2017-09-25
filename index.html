@@ -97,10 +97,8 @@
 					var d = colorElements[pianoKey];
 					if (d) {
 						if (data.message === 144) {
-							//var map = colorMap[data.note - 27];
-							//if (map) d.style.background = map.hex;
-							
-							//Use one color for left hand and another color for right hand
+							var map = colorMap[data.note - 27];
+							if (map) d.style.background = map.hex;
 							
 							d.style.color = "#fff";
 						} else {
