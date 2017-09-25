@@ -48,7 +48,7 @@
 				var b_extra = document.createElement("td");
 				b_extra.style.border = "1px solid grey";
 				// Cb and Fb have a different column width for white space
-				if(keyName.indexOf("Cb") || keyName.indexOf("Fb")) {
+				if(keyName.indexOf("Cb") != -1 || keyName.indexOf("Fb") != -1) {
 					b_extra.style.width = "14px";
 				} else {	   
 					b_extra.style.width = "7px";
@@ -88,13 +88,16 @@
 					var pianoKey = data.note - 21;
 					var d = colorElements[pianoKey];
 					if (d) {
-						var old_background = d.style.background;
 						if (data.message === 144) {
 							var map = colorMap[data.note - 27];
 							if (map) d.style.background = map.hex;
 							d.style.color = "#fff";
 						} else {
-							d.style.background = old_background;
+							if(MIDI.noteToKey(data.note).indexOf("b") == -1) {
+								d.style.background = "black";
+							} else {
+								d.style.background = "white";
+							}
 							d.style.color = "";
 						}
 					}
