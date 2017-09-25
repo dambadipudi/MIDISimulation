@@ -49,25 +49,25 @@
 				// Db and Gb have a different column width for white space
 				//console.log(keyName);
 				if(keyName.indexOf("Db") != -1 || keyName.indexOf("Gb") != -1) {
-					b_extra.style.width = "16px";
+					b_extra.style.width = "32px";
 				} else if(keyName.indexOf("Bb0") != -1) {
-				        b_extra.style.width = "8px";
+				        b_extra.style.width = "16px";
 				}
 				else {	   
-					b_extra.style.width = "6px";
+					b_extra.style.width = "12px";
 				}
 				black_keys.appendChild(b_extra);
 				var d = document.createElement("td");
 				d.style.border = "1px solid black";
 				d.style.background = "black";
-				d.style.width = "4px";
+				d.style.width = "8px";
 				black_keys.appendChild(d);
 			}
 			else{
 				var d = document.createElement("td");
 				d.style.border = "1px solid grey";
 				d.style.background = "white";
-				d.style.width = "10px";
+				d.style.width = "20px";
 				white_keys.appendChild(d);
 			}
 			
@@ -116,10 +116,10 @@
 	
 </script>
 	<div style="text-align: center; position: absolute; top: 50px; left: 50px;" id="colors">
-		<table id="white_table" style="border-collapse: collapse; border: 1px solid grey; width:520px; height: 80px;">
+		<table id="white_table" style="border-collapse: collapse; border: 1px solid grey; width:1040px; height: 80px;">
 			 <tr id="tr_piano_white"></tr>
 		</table>
-		<table id="black_table" style="border-collapse: collapse; border: 0px; width:520px; height: 50px; margin-top: -80px;">
+		<table id="black_table" style="border-collapse: collapse; border: 0px; width:1040px; height: 50px; margin-top: -80px;">
 			  <tr id="tr_piano_black"></tr>	 
 		</table>
 	</div>
