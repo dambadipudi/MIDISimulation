@@ -40,7 +40,7 @@
 		var black_title_row = document.getElementById("tr_piano_black_title");
 		var white_title_row = document.getElementById("tr_piano_white_title");
 		var black_title = ['T', 'U', 'T', 'O', 'R', 'I', 'A', 'L'];
-		var black_spacing = ["8px", "6px" , "6px" ,"16px" ,"6px" ,"16px" ,"6px" ,"6px"];
+		var black_spacing = ["16px", "12px" , "12px" ,"32px" ,"12px" ,"32px" ,"12px" ,"12px"];
 		var white_title = ['M', 'Y', 'M', 'U', 'S', 'I', 'P', 'I', 'A', 'N', 'O'];
 		//Add the black keys in the piano
 		for (var i = 0; i < black_title.length; i++) {
@@ -50,25 +50,26 @@
 			black_title_row.appendChild(extra_key);
 			//Now add the black key
 			var black_key = document.createElement("td");
-			black_key.style.color = "#FFFFFF";
-			black_key.style.fontSize = "xx-small";
+			black_key.style.color = "white";
+			black_key.style.fontSize = "x-small";
+			white_key.style.verticalAlign = "bottom";
 			black_key.style.background = "black";
 			black_key.innerHTML = black_title[i];
-			black_key.style.width = "4px";
+			black_key.style.width = "8px";
 			black_title_row.appendChild(black_key);
 		}
 		//Finally add the last extra space
 		var final_extra_key = document.createElement("td");
-		final_extra_key.style.width = "8px";
+		final_extra_key.style.width = "16px";
 		black_title_row.appendChild(final_extra_key);
 		
 		//Now add the white keys in the piano
 		for(var j = 0; j < white_title.length; j++) {
 			var white_key = document.createElement("td");
 			white_key.style.border = "1px solid black";
-			white_key.style.width = "10px";
+			white_key.style.width = "20px";
 			white_key.style.background = "white";
-			white_key.style.fontSize="xx-small";
+			white_key.style.fontSize="x-small";
 			white_key.style.color = "black";
 			white_key.style.verticalAlign = "bottom";
 			white_key.innerHTML = white_title[j];
@@ -160,12 +161,12 @@
 	};
 	
 </script>
-	<div id="title" style="text-align: center; margin:auto; width: 100%; padding:50px;">
-		<table id="white_table_title" style="border-collapse: collapse; border: 1px solid grey; width:220px; height: 40px; table-layout: fixed;">
+	<div id="title" style="align: center; margin:auto; width: 100%; padding:50px;">
+		<table id="white_table_title" style="border-collapse: collapse; border: 1px solid grey; width:220px; height: 80px; table-layout: fixed;">
 			 <tr id="tr_piano_white_title">
 			 </tr>
 		</table>
-		<table id="black_table_title" style="border-collapse: collapse; border: 0px; width:220px; height: 25px; margin-top: -40px; table-layout: fixed;">
+		<table id="black_table_title" style="border-collapse: collapse; border: 0px; width:220px; height: 50px; margin-top: -80px; table-layout: fixed;">
 			  <tr id="tr_piano_black_title">
 			  </tr>	 
 		</table>
