@@ -46,29 +46,29 @@
 		for (var i = 0; i < black_title.length; i++) {
 			//Add spacing between the black keys
 			var extra_key = document.createElement("td");
-			extra_key.width = black_spacing[i];
+			extra_key.style.width = black_spacing[i];
 			black_title_row.appendChild(extra_key);
 			//Now add the black key
 			var black_key = document.createElement("td");
-			black_key.color = "#FFFFFF";
-			black_key.fontSize = "xx-small";
-			black_key.background = "black";
+			black_key.style.color = "#FFFFFF";
+			black_key.style.fontSize = "xx-small";
+			black_key.style.background = "black";
 			black_key.innerHTML = black_title[i];
-			black_key.width = "4px";
+			black_key.style.width = "4px";
 			black_title_row.appendChild(black_key);
 		}
 		//Finally add the last extra space
 		var final_extra_key = document.createElement("td");
-		final_extra_key.width = "8px";
+		final_extra_key.style.width = "8px";
 		black_title_row.appendChild(final_extra_key);
 		
 		//Now add the white keys in the piano
 		for(var j = 0; j < white_title.length; j++) {
 			var white_key = document.createElement("td");
-			white_key.width = "10px";
-			white_key.background = "white";
-			white_key.fontSize="xx-small";
-			white_key.color = "black";
+			white_key.style.width = "10px";
+			white_key.style.background = "white";
+			white_key.style.fontSize="xx-small";
+			white_key.style.color = "black";
 			white_key.innerHTML = white_title[j];
 			white_title_row.appendChild(white_key);
 		}
