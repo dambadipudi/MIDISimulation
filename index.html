@@ -93,7 +93,7 @@
 							if (map) d.style.background = map.hex;
 							d.style.color = "#fff";
 						} else {
-							if(MIDI.noteToKey(data.note).indexOf("b") == -1) {
+							if(MIDI.noteToKey[data.note].indexOf("b") == -1) {
 								d.style.background = "black";
 							} else {
 								d.style.background = "white";
