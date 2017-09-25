@@ -37,16 +37,37 @@
 	window.onload = function () {
 		
 		// Create each column as a piano key initially
-		var colors = document.getElementById("tr_piano");
+		var black_keys = document.getElementById("tr_piano_black");
+		var white_keys = document.getElementById("tr_piano_white");
 		var colorElements = [];
 		for (var n = 0; n < 88; n++) {
-			var d = document.createElement("td");
-			d.style.fontSize = "xx-small";
-			d.style.border = "1px solid grey";
-			d.style.width = "10px";
-			d.innerHTML = MIDI.noteToKey[n + 21];
+			var keyName = MIDI.noteToKey[n + 21];
+			// If it is a black key, then the name contains 'b' (flat)
+			if(keyName.indexOf("b") != -1) {
+				//Create a white extra column and the black column for a black key
+				var b_extra = document.createElement("td");
+				b_extra.style.border = "1px solid grey";
+				// Cb and Fb have a different column width for white space
+				if(keyName.indexOf("Cb" || keyName.indexOf("Fb") {
+					b_extra.style.width = "8px";
+				} else {	   
+					b_extra.style.width = "8px";
+				}
+				black_keys.appendChild(b_extra);
+				var d = document.createElement("td");
+				d.style.background = "black";
+				d.style.width = "4px";
+				black_keys.appendChild(d);
+			}
+			else{
+				var d = document.createElement("td");
+				d.style.border = "1px solid grey";
+				d.style.background = "white";
+				d.style.width = "10px";
+				white_keys.appendChild(d);
+			}
+			
 			colorElements.push(d);
-			colors.appendChild(d);
 		}
 		///
 		MIDI.loader = new sketch.ui.Timer;
@@ -67,12 +88,13 @@
 					var pianoKey = data.note - 21;
 					var d = colorElements[pianoKey];
 					if (d) {
+						var old_background = d.style.background;
 						if (data.message === 144) {
 							var map = colorMap[data.note - 27];
 							if (map) d.style.background = map.hex;
 							d.style.color = "#fff";
 						} else {
-							d.style.background = "";
+							d.style.background = old_background;
 							d.style.color = "";
 						}
 					}
@@ -87,9 +109,8 @@
 </script>
 	<div style="text-align: center; position: absolute; top: 50px; left: 50px;" id="colors">
 		<table id="Piano table" style="border-collapse: collapse; border: 1px solid grey; width:880px; height: 50px;">
-			  <tr id="tr_piano">
-			   	
-			   </tr>
+			  <tr id="tr_piano_black"></tr>
+			  <tr id="tr_piano_white"></tr>
 		</table>
 	</div>
 	
