@@ -50,9 +50,9 @@
 				// Db and Gb have a different column width for white space
 				console.log(keyName);
 				if(keyName.indexOf("Db") != -1 || keyName.indexOf("Gb") != -1) {
-					b_extra.style.width = "14px";
+					b_extra.style.width = "16px";
 				} else {	   
-					b_extra.style.width = "7px";
+					b_extra.style.width = "6px";
 				}
 				black_keys.appendChild(b_extra);
 				var d = document.createElement("td");
@@ -113,10 +113,10 @@
 	
 </script>
 	<div style="text-align: center; position: absolute; top: 50px; left: 50px;" id="colors">
-		<table id="black_table" style="border-collapse: collapse; border: 1px solid grey; width:880px; height: 40px;">
+		<table id="black_table" style="border-collapse: collapse; border: 1px solid grey; width:880px; height: 60px;">
 			  <tr id="tr_piano_black"></tr>	 
 		</table>
-		<table id="white_table" style="border-collapse: collapse; border: 1px solid grey; width:880px; height: 50px;">
+		<table id="white_table" style="border-collapse: collapse; border: 1px solid grey; width:880px; height: 30px;">
 			 <tr id="tr_piano_white"></tr>
 		</table>
 	</div>
