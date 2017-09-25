@@ -89,7 +89,7 @@
 				/// this sets up the MIDI.Player and gets things going...
 				player = MIDI.Player;
 				player.timeWarp = 1; // speed the song is played back
-				player.loadFile("mamathala_talli_midi.mid", player.start);
+				player.loadFile("mamathala_talli.mid", player.start);
 				/// control the piano keys colors
 				var colorMap = MIDI.Synesthesia.map();
 				player.addListener(function(data) {
@@ -97,8 +97,11 @@
 					var d = colorElements[pianoKey];
 					if (d) {
 						if (data.message === 144) {
-							var map = colorMap[data.note - 27];
-							if (map) d.style.background = map.hex;
+							//var map = colorMap[data.note - 27];
+							//if (map) d.style.background = map.hex;
+							
+							//Use one color for left hand and another color for right hand
+							
 							d.style.color = "#fff";
 						} else {
 							//Black key 
