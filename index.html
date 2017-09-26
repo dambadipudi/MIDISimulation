@@ -267,22 +267,30 @@
 	<div id="song_name" style="margin:auto; width: 250px; position: absolute; z-index: 2;">
 		<h2 style="font-family: 'Wendy One';">Fur Elise (Ludwig Van Beethoven)</h2>
 		<div style="margin: 0 auto; float: center;">
-			Together: 
-			<div style="display: inline-block">
-				<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playBoth()" id="both_control">
-				<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playBoth(true)">
-			</div>
-			Video:
-			<div  style="display: inline-block">
-				<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playVideo()" id="video_control">
-				<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playVideo(true)">
-				<input type="button" id="mute_video" onclick="muteVideo()" value="Mute" />
-			</div>
-			Simulation:
-			<div style="display: inline-block">
-				<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playMIDI()" id="MIDI_control">
-				<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playMIDI(true)">	
-			</div>
+			<table>
+				<tr>
+					<td>Together:</td>
+					<td>
+						<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playBoth()" id="both_control">
+						<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playBoth(true)">
+					</td>
+				</tr>
+				<tr>
+					<td>Video:</td>
+					<td>
+						<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playVideo()" id="video_control">
+						<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playVideo(true)">
+						<input type="button" id="mute_video" onclick="muteVideo()" value="Mute" />
+					</td>
+				</tr>
+				<tr>
+					<td>Simulation:</td>
+					<td>
+						<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playMIDI()" id="MIDI_control">
+						<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playMIDI(true)">	
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 	
