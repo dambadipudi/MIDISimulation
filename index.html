@@ -138,6 +138,7 @@
 				player.loadFile("fur_elise.mid", player.pause);
 				/// control the piano keys colors
 				var colorMap = MIDI.Synesthesia.map();
+				
 				player.addListener(function(data) {
 					var pianoKey = data.note - 21;
 					var d = colorElements[pianoKey];
@@ -158,11 +159,6 @@
 							d.style.color = "";
 						}
 					}
-					//Display play button after song is done
-					if(!MIDI.Player.playing) {
-						var d = document.getElementById("pausePlayStop");
-						d.src = "examples/images/play.png";
-					}
 					
 				});
 				///
@@ -172,11 +168,56 @@
 		});
 	};
 	
-	// Toggle between Pause and Play modes.
-	var pausePlayStop = function(stop) {
-		
-		var d = document.getElementById("pausePlayStop");
+	document.getElementById('myvid').addEventListener('ended',changePlayButton,false);
+	function changePlayButton(e) {
+		var d = document.getElementById("video_control");
+		d.src = "examples/images/play.png";
+	};
+	
+	var playVideo = function(stop) {
+		var d = document.getElementById("video_control");
 		var video_elem = document.getElementById("myvid");
+		var buttonObj = document.getElementById("mute_video");
+		if(stop) {
+			d.src = "examples/images/play.png";
+			video_elem.currentTime = 0;
+			video_elem.pause();
+		}
+		else if(!video_elem.paused) {
+			d.src = "examples/images/play.png";
+			video_elem.pause();
+		} else {
+			d.src = "examples/images/pause.png";
+			video_elem.play();
+			if(buttonObj.value == "Mute Video") {
+				video_elem.muted = false;
+			} 
+			else{
+				video_elem.muted = true;
+			}
+		}
+	};
+	
+	// Toggle between Pause and Play modes.
+	var playMIDI = function(stop) {
+		var d = document.getElementById("MIDI_control");
+		if (stop) {
+			d.src = "examples/images/play.png";
+			MIDI.Player.stop();
+		} else if (MIDI.Player.playing) {
+			d.src = "examples/images/play.png";
+			MIDI.Player.pause(true);
+		} else {
+			d.src = "examples/images/pause.png";
+			MIDI.Player.resume();
+		}
+	};
+	
+	var playBoth = function(stop) {
+		
+		var d = document.getElementById("both_control");
+		var video_elem = document.getElementById("myvid");
+		var buttonObj = document.getElementById("mute_video");
 		if (stop) {
 			MIDI.Player.stop();
 			d.src = "examples/images/play.png";
@@ -192,6 +233,12 @@
 			d.src = "examples/images/pause.png";
 			MIDI.Player.resume();
 			video_elem.play();
+			if(buttonObj.value == "Mute Video") {
+				video_elem.muted = false;
+			} 
+			else{
+				video_elem.muted = true;
+			}
 		}
 	};
 	
@@ -209,10 +256,7 @@
 			buttonObj.value = "Mute Video";
 		}
 	};
-	
-	muteSimulation = function() {
-	//Write code here
-	}
+
 	
 </script>
 	<div id="title" style="margin:auto; width: 30%; padding:20px;">
@@ -229,10 +273,18 @@
 	<div id="song_name" style="margin:auto; width: 200px; padding: 20px; position: absolute; z-index: 2;">
 		<h2 style="font-family: 'Wendy One';">Fur Elise (Ludwig Van Beethoven)</h2>
 		<div style="margin: 0 auto; width: 120px; float: center;">
-			<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="pausePlayStop()" id="pausePlayStop">
-			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="pausePlayStop(true)">
-			<input type="button" id="mute_video" onclick="muteVideo()" value="Mute Video" />
-			<input type="button" id="mute_midi" onclick="muteMIDI()" value="Mute Simulation" />	
+			Together: 
+			<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playBoth()" id="both_control">
+			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playBoth(true)">
+			Video:
+			<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playVideo()" id="video_control">
+			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playVideo(true)">
+			<input type="button" id="mute_video" onclick="muteVideo()" value="Unmute Video" />
+			Simulation:
+			<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playMIDI()" id="MIDI_control">
+			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playMIDI(true)">
+			
+				
 		</div>
 	</div>
 	
