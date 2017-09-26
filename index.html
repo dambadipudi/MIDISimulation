@@ -168,7 +168,8 @@
 		});
 	};
 	
-	document.getElementById('myvid').addEventListener('ended',changePlayButton,false);
+	document.getElementById("myvid").addEventListener('ended',changePlayButton,false);
+	
 	function changePlayButton(e) {
 		var d = document.getElementById("video_control");
 		d.src = "examples/images/play.png";
@@ -272,7 +273,7 @@
 
 	<div id="song_name" style="margin:auto; width: 200px; padding: 20px; position: absolute; z-index: 2;">
 		<h2 style="font-family: 'Wendy One';">Fur Elise (Ludwig Van Beethoven)</h2>
-		<div style="margin: 0 auto; width: 120px; float: center;">
+		<div style="margin: 0 auto; width: 180px; float: center;">
 			Together: 
 			<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playBoth()" id="both_control">
 			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playBoth(true)">
