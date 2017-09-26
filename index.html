@@ -191,15 +191,16 @@
 	
 	muteVideo = function() {
 		var video_elem = document.getElementById("myvid");
-		console.log(video_elem.value);
-		if(video_elem.value == "Mute Video") {
+		var buttonObj = document.getElementById("mute_video");
+		console.log(buttonObj.value);
+		if(buttonObj.value == "Mute Video") {
 			console.log("Entered the case to mute video");
 			video_elem.muted = true;
-			video_elem.value = "Unmute Video";
+			buttonObj.value = "Unmute Video";
 		}
-		else if(video_elem.value == "Umnute Video") {
+		else if(buttonObj.value == "Umnute Video") {
 			video_elem.muted = false;
-			video_elem.value = "Mute Video";
+			buttonObj.value = "Mute Video";
 		}
 	};
 	
