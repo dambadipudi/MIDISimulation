@@ -191,7 +191,9 @@
 	
 	muteVideo = function() {
 		var video_elem = document.getElementById("myvid");
+		console.log(video_elem.value);
 		if(video_elem.value == "Mute Video") {
+			console.log("Entered the case to mute video");
 			video_elem.muted = true;
 			video_elem.value = "Unmute Video";
 		}
