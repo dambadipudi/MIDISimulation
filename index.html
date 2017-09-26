@@ -135,7 +135,7 @@
 				/// this sets up the MIDI.Player and gets things going...
 				player = MIDI.Player;
 				player.timeWarp = 1; // speed the song is played back
-				player.loadFile("adiga_adiga_for_web.mid", player.pause);
+				player.loadFile("fur_elise.mid", player.pause);
 				/// control the piano keys colors
 				var colorMap = MIDI.Synesthesia.map();
 				player.addListener(function(data) {
@@ -202,7 +202,7 @@
 	</div>
 
 	<div id="song_name" style="margin:auto; width: 30%; padding: 20px; position: absolute; z-index: 2; margin-left: 350px; margin-top: 50px;">
-		<h2 style="font-family: 'Wendy One';"> Adiga Adiga (Ninnu Kori)</h2>
+		<h2 style="font-family: 'Wendy One';">Fur Elise (Ludwig Van Beethoven)</h2>
 		<div style="margin: 0 auto; width: 160px; float: center;">
 			<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="pausePlayStop()" id="pausePlayStop">
 			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="pausePlayStop(true)">
@@ -220,7 +220,7 @@
 	
 	<div style="position:absolute; z-index: 1; padding: 20px; text-align:center; margin:auto; margin-left: 210px; margin-top: 20px; ">	
 		<video width="780" id="myvid">
-			<source src="video_for_web.mp4" type="video/mp4">
+			<source src="web_video.mp4" type="video/mp4">
 		</video>
 	</div>
 	
