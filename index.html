@@ -93,7 +93,12 @@
 				// Db and Gb have a different column width for white space
 				//console.log(keyName);
 				if(keyName.indexOf("Db") != -1 || keyName.indexOf("Gb") != -1) {
-					b_extra.style.width = "32px";
+					if(keyName.indexOf("4") != -1 || keyName.indexOf("5") != -1 || keyName.indexOf("6") != -1) {
+						b_extra.style.width = "33px";
+					}
+					else {
+						b_extra.style.width = "32px";
+					}
 				} else if(keyName.indexOf("Bb0") != -1) { //First key only
 				        b_extra.style.width = "16px";
 				}
@@ -116,10 +121,7 @@
 			}
 			colorElements.push(d);
 		}
-		//At the end add another extra space after last black key
-		var b_last_extra = document.createElement("td");
-		b_last_extra.style.width = "32px";
-		black_keys.appendChild(b_last_extra);
+		
 		
 		///
 		MIDI.loader = new sketch.ui.Timer;
