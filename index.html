@@ -210,21 +210,29 @@
 	var playBoth = function(stop) {
 		
 		var d = document.getElementById("both_control");
+		var mid = document.getElementById("MIDI_control");
+		var vid = document.getElementById("video_control");
 		var video_elem = document.getElementById("myvid");
 		var buttonObj = document.getElementById("mute_video");
 		if (stop) {
 			MIDI.Player.stop();
 			d.src = "examples/images/play.png";
+			mid.src = "examples/images/play.png";
+			vid.src = "examples/images/play.png";
 			video_elem.currentTime = 0;
 			video_elem.pause();
 			
 		} else if (MIDI.Player.playing) {
 			d.src = "examples/images/play.png";
+			mid.src = "examples/images/play.png";
+			vid.src = "examples/images/play.png";
 			MIDI.Player.pause(true);
 			video_elem.pause();
 			
 		} else {
 			d.src = "examples/images/pause.png";
+			mid.src = "examples/images/pause.png";
+			vid.src = "examples/images/pause.png";
 			MIDI.Player.resume();
 			video_elem.play();
 			if(buttonObj.value == "Mute") {
