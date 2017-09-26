@@ -175,6 +175,7 @@
 			MIDI.Player.stop();
 			d.src = "examples/images/play.png";
 			video_elem.currentTime = 0;
+			video_elem.pause();
 			
 		} else if (MIDI.Player.playing) {
 			d.src = "examples/images/play.png";
