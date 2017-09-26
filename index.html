@@ -189,6 +189,24 @@
 		}
 	};
 	
+	muteVideo = function() {
+		var video_elem = document.getElementById("myvid");
+		if(video_elem.value == "unmuted") {
+			video_elem.muted = true;
+			video_elem.value = "muted";
+			video_elem.innerHTML = "Unmute Video";
+		}
+		else if(video_elem.value == "muted") {
+			video_elem.muted = false;
+			video_elem.value = "unmuted";
+			video_elem.innerHTML = "Mute Video";
+		}
+	};
+	
+	muteSimulation = function() {
+	//Write code here
+	}
+	
 </script>
 	<div id="title" style="margin:auto; width: 30%; padding:20px;">
 		<table id="white_table_title" style="border-collapse: collapse; border: 1px solid grey; width:220px; height: 90px; table-layout: fixed;">
@@ -206,6 +224,8 @@
 		<div style="margin: 0 auto; width: 160px; float: center;">
 			<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="pausePlayStop()" id="pausePlayStop">
 			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="pausePlayStop(true)">
+			<input type="button" id="mute_video" onclick="muteVideo()" value="unmuted">Mute Video</input>
+			<input type="button" id="mute_midi" onclick="muteMIDI()" value="unmuted">Mute Simulation</input>	
 		</div>
 	</div>
 	
