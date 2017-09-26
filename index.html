@@ -158,6 +158,12 @@
 							d.style.color = "";
 						}
 					}
+					//Display play button after song is done
+					if(!MIDI.Player.playing) {
+						var d = document.getElementById("pausePlayStop");
+						d.src = "examples/images/play.png";
+					}
+					
 				});
 				///
 				//ColorSphereBackground();
