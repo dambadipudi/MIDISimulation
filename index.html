@@ -135,7 +135,7 @@
 				/// this sets up the MIDI.Player and gets things going...
 				player = MIDI.Player;
 				player.timeWarp = 0.75; // speed the song is played back
-				player.loadFile("mamathala_talli.mid", player.start);
+				player.loadFile("mamathala_talli.mid", player.pause);
 				/// control the piano keys colors
 				var colorMap = MIDI.Synesthesia.map();
 				player.addListener(function(data) {
@@ -195,7 +195,7 @@
 	<div id="song_name" style="margin:auto; width: 30%; padding: 50px;">
 		<h2 style="font-family: 'Wendy One';"> Mamathala Talli (Bahubali)</h2>
 		<div style="margin: 0 auto; width: 160px; float: center;">
-			<input type="image" src="examples/images/pause.png" align="absmiddle" value="pause" onclick="pausePlayStop()" id="pausePlayStop">
+			<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="pausePlayStop()" id="pausePlayStop">
 			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="pausePlayStop(true)">
 		</div>
 	</div>
@@ -208,7 +208,7 @@
 			  <tr id="tr_piano_black"></tr>	 
 		</table>
 	</div>
-	<video width="1040px" height = "520px">
+	<video width="1040px" height = "520px" controls>
 		<source src="small_video_for_web.mp4" type="video/mp4">
 	</video>
 	
