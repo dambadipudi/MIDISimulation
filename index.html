@@ -168,16 +168,22 @@
 	
 	// Toggle between Pause and Play modes.
 	var pausePlayStop = function(stop) {
+		
 		var d = document.getElementById("pausePlayStop");
+		var video_elem = document.getElementById("myvid");
 		if (stop) {
 			MIDI.Player.stop();
 			d.src = "examples/images/play.png";
+			video_elem.stop();
 		} else if (MIDI.Player.playing) {
 			d.src = "examples/images/play.png";
 			MIDI.Player.pause(true);
+			video_elem.pause();
+			
 		} else {
 			d.src = "examples/images/pause.png";
 			MIDI.Player.resume();
+			video_elem.play();
 		}
 	};
 	
@@ -210,8 +216,8 @@
 		</table>
 	</div>
 	
-	<div style="position:absolute; z-index: 1; padding: 50px;">	
-		<video width="1196" controls>
+	<div style="position:absolute; z-index: 1; padding: 100px;">	
+		<video width="1000" id="myvid">
 			<source src="video_for_web.mp4" type="video/mp4">
 		</video>
 	</div>
