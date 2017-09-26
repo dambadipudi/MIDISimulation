@@ -168,13 +168,6 @@
 		});
 	};
 	
-	document.getElementById("myvid").addEventListener('ended',changePlayButton,false);
-	
-	function changePlayButton(e) {
-		var d = document.getElementById("video_control");
-		d.src = "examples/images/play.png";
-	};
-	
 	var playVideo = function(stop) {
 		var d = document.getElementById("video_control");
 		var video_elem = document.getElementById("myvid");
