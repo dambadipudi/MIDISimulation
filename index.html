@@ -166,6 +166,21 @@
 		});
 	};
 	
+	// Toggle between Pause and Play modes.
+	var pausePlayStop = function(stop) {
+		var d = document.getElementById("pausePlayStop");
+		if (stop) {
+			MIDI.Player.stop();
+			d.src = "examples/images/play.png";
+		} else if (MIDI.Player.playing) {
+			d.src = "examples/images/play.png";
+			MIDI.Player.pause(true);
+		} else {
+			d.src = "examples/images/pause.png";
+			MIDI.Player.resume();
+		}
+	};
+	
 </script>
 	<div id="title" style="margin:auto; width: 30%; padding:50px;">
 		<table id="white_table_title" style="border-collapse: collapse; border: 1px solid grey; width:220px; height: 90px; table-layout: fixed;">
@@ -177,6 +192,14 @@
 			  </tr>	 
 		</table>
 	</div>
+	<div id="song_name" style="margin:auto; width: 30%; padding: 50px;">
+		<h2 style="font-family: 'Wendy One';"> Mamathala Talli (Bahubali)</h2>
+		<div style="margin: 0 auto; width: 160px; float: right;">
+			<input type="image" src="examples/images/pause.png" align="absmiddle" value="pause" onclick="pausePlayStop()" id="pausePlayStop">
+			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="pausePlayStop(true)">
+		</div>
+	</div>
+	
 	<div style="text-align: center; margin:auto; width: 100%; padding: 50px;">
 		<table id="white_table" style="border-collapse: collapse; border: 1px solid grey; width:1040px; height: 90px; table-layout: fixed;">
 			 <tr id="tr_piano_white"></tr>
