@@ -243,18 +243,18 @@
 		}
 	};
 	
-	muteVideo = function() {
+	var muteVideo = function() {
 		var video_elem = document.getElementById("myvid");
 		var buttonObj = document.getElementById("mute_video");
 		console.log(buttonObj.value);
-		if(buttonObj.value == "Mute Video") {
+		if(buttonObj.value == "Mute") {
 			console.log("Entered the case to mute video");
 			video_elem.muted = true;
-			buttonObj.value = "Unmute Video";
+			buttonObj.value = "Unmute";
 		}
-		else if(buttonObj.value == "Unmute Video") {
+		else if(buttonObj.value == "Unmute") {
 			video_elem.muted = false;
-			buttonObj.value = "Mute Video";
+			buttonObj.value = "Mute";
 		}
 	};
 
@@ -273,19 +273,17 @@
 
 	<div id="song_name" style="margin:auto; width: 200px; padding: 20px; position: absolute; z-index: 2;">
 		<h2 style="font-family: 'Wendy One';">Fur Elise (Ludwig Van Beethoven)</h2>
-		<div style="margin: 0 auto; width: 180px; float: center;">
+		<div style="margin: 0 auto; width: 200px; float: center;">
 			Together: 
 			<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playBoth()" id="both_control">
 			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playBoth(true)">
 			Video:
 			<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playVideo()" id="video_control">
 			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playVideo(true)">
-			<input type="button" id="mute_video" onclick="muteVideo()" value="Unmute Video" />
+			<input type="button" id="mute_video" onclick="muteVideo()" value="Unmute" />
 			Simulation:
 			<input type="image" src="examples/images/play.png" align="absmiddle" value="play" onclick="playMIDI()" id="MIDI_control">
-			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playMIDI(true)">
-			
-				
+			<input type="image" src="examples/images/stop.png" align="absmiddle" value="stop" onclick="playMIDI(true)">	
 		</div>
 	</div>
 	
