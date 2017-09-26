@@ -134,7 +134,7 @@
 			onsuccess: function() {
 				/// this sets up the MIDI.Player and gets things going...
 				player = MIDI.Player;
-				player.timeWarp = 1; // speed the song is played back
+				player.timeWarp = 0.8; // speed the song is played back
 				player.loadFile("fur_elise.mid", player.pause);
 				/// control the piano keys colors
 				var colorMap = MIDI.Synesthesia.map();
