@@ -114,13 +114,13 @@
 				d.style.width = "20px";
 				white_keys.appendChild(d);
 			}
-			//At the end add another extra space after last black key
-			var b_last_extra = document.createElement("td");
-			b_last_extra.style.width = "36px";
-			black_keys.appendChild(b_last_extra);
-			
 			colorElements.push(d);
 		}
+		//At the end add another extra space after last black key
+		var b_last_extra = document.createElement("td");
+		b_last_extra.style.width = "36px";
+		black_keys.appendChild(b_last_extra);
+		
 		///
 		MIDI.loader = new sketch.ui.Timer;
 		MIDI.loadPlugin({
@@ -150,7 +150,8 @@
 							if(MIDI.noteToKey[data.note].indexOf("b") != -1) {
 								d.style.backgroundImage = "url('black_key_image.png')";
 							} else {
-								d.style.backgroundImage = "url('white_key_image.png')";
+								//d.style.backgroundImage = "url('white_key_image.png')";
+								d.style.background = "white";
 							}
 							d.style.color = "";
 						}
