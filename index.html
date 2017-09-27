@@ -166,99 +166,99 @@
 				//MIDIPlayerPercentage(player);
 			}
 		});
-	};
 	
-	var playVideo = function(stop) {
-		var d = document.getElementById("video_control");
-		var video_elem = document.getElementById("myvid");
-		var buttonObj = document.getElementById("mute_video");
-		if(stop) {
-			d.src = "examples/images/play.png";
-			video_elem.currentTime = 0;
-			video_elem.pause();
-		}
-		else if(!video_elem.paused) {
-			d.src = "examples/images/play.png";
-			video_elem.pause();
-		} else {
-			d.src = "examples/images/pause.png";
-			video_elem.play();
-			if(buttonObj.value == "Mute") {
-				video_elem.muted = false;
-			} 
-			else{
-				video_elem.muted = true;
+	
+		var playVideo = function(stop) {
+			var d = document.getElementById("video_control");
+			var video_elem = document.getElementById("myvid");
+			var buttonObj = document.getElementById("mute_video");
+			if(stop) {
+				d.src = "examples/images/play.png";
+				video_elem.currentTime = 0;
+				video_elem.pause();
 			}
-		}
-	};
-	
-	// Toggle between Pause and Play modes.
-	var playMIDI = function(stop) {
-		var d = document.getElementById("MIDI_control");
-		if (stop) {
-			d.src = "examples/images/play.png";
-			MIDI.Player.stop();
-		} else if (MIDI.Player.playing) {
-			d.src = "examples/images/play.png";
-			MIDI.Player.pause(true);
-		} else {
-			d.src = "examples/images/pause.png";
-			MIDI.Player.resume();
-		}
-	};
-	
-	var playBoth = function(stop) {
-		
-		var d = document.getElementById("both_control");
-		var mid = document.getElementById("MIDI_control");
-		var vid = document.getElementById("video_control");
-		var video_elem = document.getElementById("myvid");
-		var buttonObj = document.getElementById("mute_video");
-		if (stop) {
-			MIDI.Player.stop();
-			d.src = "examples/images/play.png";
-			mid.src = "examples/images/play.png";
-			vid.src = "examples/images/play.png";
-			video_elem.currentTime = 0;
-			video_elem.pause();
-			
-		} else if (MIDI.Player.playing) {
-			d.src = "examples/images/play.png";
-			mid.src = "examples/images/play.png";
-			vid.src = "examples/images/play.png";
-			MIDI.Player.pause(true);
-			video_elem.pause();
-			
-		} else {
-			d.src = "examples/images/pause.png";
-			mid.src = "examples/images/pause.png";
-			vid.src = "examples/images/pause.png";
-			MIDI.Player.resume();
-			video_elem.play();
-			if(buttonObj.value == "Mute") {
-				video_elem.muted = false;
-			} 
-			else{
-				video_elem.muted = true;
+			else if(!video_elem.paused) {
+				d.src = "examples/images/play.png";
+				video_elem.pause();
+			} else {
+				d.src = "examples/images/pause.png";
+				video_elem.play();
+				if(buttonObj.value == "Mute") {
+					video_elem.muted = false;
+				} 
+				else{
+					video_elem.muted = true;
+				}
 			}
-		}
-	};
+		};
 	
-	var muteVideo = function() {
-		var video_elem = document.getElementById("myvid");
-		var buttonObj = document.getElementById("mute_video");
-		console.log(buttonObj.value);
-		if(buttonObj.value == "Mute") {
-			console.log("Entered the case to mute video");
-			video_elem.muted = true;
-			buttonObj.value = "Unmute";
-		}
-		else if(buttonObj.value == "Unmute") {
-			video_elem.muted = false;
-			buttonObj.value = "Mute";
-		}
-	};
+		// Toggle between Pause and Play modes.
+		var playMIDI = function(stop) {
+			var d = document.getElementById("MIDI_control");
+			if (stop) {
+				d.src = "examples/images/play.png";
+				MIDI.Player.stop();
+			} else if (MIDI.Player.playing) {
+				d.src = "examples/images/play.png";
+				MIDI.Player.pause(true);
+			} else {
+				d.src = "examples/images/pause.png";
+				MIDI.Player.resume();
+			}
+		};
+	
+		var playBoth = function(stop) {
 
+			var d = document.getElementById("both_control");
+			var mid = document.getElementById("MIDI_control");
+			var vid = document.getElementById("video_control");
+			var video_elem = document.getElementById("myvid");
+			var buttonObj = document.getElementById("mute_video");
+			if (stop) {
+				MIDI.Player.stop();
+				d.src = "examples/images/play.png";
+				mid.src = "examples/images/play.png";
+				vid.src = "examples/images/play.png";
+				video_elem.currentTime = 0;
+				video_elem.pause();
+
+			} else if (MIDI.Player.playing) {
+				d.src = "examples/images/play.png";
+				mid.src = "examples/images/play.png";
+				vid.src = "examples/images/play.png";
+				MIDI.Player.pause(true);
+				video_elem.pause();
+
+			} else {
+				d.src = "examples/images/pause.png";
+				mid.src = "examples/images/pause.png";
+				vid.src = "examples/images/pause.png";
+				MIDI.Player.resume();
+				video_elem.play();
+				if(buttonObj.value == "Mute") {
+					video_elem.muted = false;
+				} 
+				else{
+					video_elem.muted = true;
+				}
+			}
+		};
+
+		var muteVideo = function() {
+			var video_elem = document.getElementById("myvid");
+			var buttonObj = document.getElementById("mute_video");
+			console.log(buttonObj.value);
+			if(buttonObj.value == "Mute") {
+				console.log("Entered the case to mute video");
+				video_elem.muted = true;
+				buttonObj.value = "Unmute";
+			}
+			else if(buttonObj.value == "Unmute") {
+				video_elem.muted = false;
+				buttonObj.value = "Mute";
+			}
+		};
+	};
 	
 </script>
 	<div id="title" style="margin:auto; width: 30%; padding:20px;">
